@@ -3,4 +3,6 @@
 file = File.symlink?(__FILE__) ? File.readlink(__FILE__) : __FILE__
 relative_libdir = File.expand_path('../../lib', file)
 
-puts relative_libdir
+if File.directory?(relative_libdir)
+  Dir[relative_libdir + '/*.rb'].each { |file| require file }
+end
