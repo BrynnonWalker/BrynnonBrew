@@ -1,12 +1,15 @@
 #!/usr/bin/env ruby
 
-file = File.symlink?(__FILE__) ? File.readlink(__FILE__) : __FILE__
+file = File.realpath(__FILE__)
 relative_libdir = File.expand_path('../../lib', file)
+$motionbrew_dir = File.join(relative_libdir, 'motion-brew')
+$:unshift($motionbrew_dir)
 
-if File.directory?(relative_libdir)
-  Dir[relative_libdir + '/motion-brew' + '/*.rb'].each { |file| require file
-    puts "found: + file" }
-end
+require 'helloworld'
+
+#if File.directory?($motionbrew_dir)
+#  Dir[$motionbrew_dir + '/*.rb'].each { |file| require file }
+#end
 
 hello = HelloWorld.new()
 hello.say_hello
