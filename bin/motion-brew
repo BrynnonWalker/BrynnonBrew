@@ -6,3 +6,6 @@ relative_libdir = File.expand_path('../../lib', file)
 if File.directory?(relative_libdir)
   Dir[relative_libdir + '/*.rb'].each { |file| require file }
 end
+
+puts file
+puts relative_libdir
