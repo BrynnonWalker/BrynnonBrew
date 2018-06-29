@@ -3,7 +3,7 @@
 file = File.realpath(__FILE__)
 relative_libdir = File.expand_path('../../lib', file)
 $motionbrew_dir = File.join(relative_libdir, 'motion-brew')
-$:unshift($motionbrew_dir)
+$:.unshift($motionbrew_dir)
 
 require 'helloworld'
 
