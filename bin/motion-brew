@@ -7,4 +7,4 @@ if File.directory?(relative_libdir)
   Dir[relative_libdir + '/motion-brew' + '/*.rb'].each { |file| require file }
 end
 
-Command.say_hello
+HelloWorld.new.say_hello
