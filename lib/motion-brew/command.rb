@@ -1,7 +1,6 @@
-module MotionBrew
-  class Command
+class Command
     def self.say_hello()
       puts "Hello World"
     end
-  end
+    say_hello
 end
