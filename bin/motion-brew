@@ -6,5 +6,3 @@ relative_libdir = File.expand_path('../../lib', file)
 if File.directory?(relative_libdir)
   Dir[relative_libdir + 'motion-brew' + '/*.rb'].each { |file| require file }
 end
-
-MotionBrew::Command.say_hello()
