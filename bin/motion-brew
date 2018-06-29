@@ -4,5 +4,5 @@ file = File.symlink?(__FILE__) ? File.readlink(__FILE__) : __FILE__
 relative_libdir = File.expand_path('../../lib', file)
 
 if File.directory?(relative_libdir)
-  Dir[relative_libdir + 'motion-brew' + '/*.rb'].each { |file| require file }
+  Dir[relative_libdir + '/motion-brew' + '/*.rb'].each { |file| require file }
 end
