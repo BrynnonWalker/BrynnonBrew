@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+file = File.symlink?(__FILE__) ? File.readlink(__FILE__) : __FILE__
+relative_libdir = File.expand_path('../../lib', file)
+
+puts relative_libdir
